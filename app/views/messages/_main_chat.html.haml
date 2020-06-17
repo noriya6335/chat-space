@@ -1,0 +1,43 @@
+.main-chat
+  .group
+    .group__info
+      .group__info__name
+        グループ
+      %ul.group__info__member
+        Member :
+        .group__info__member--list
+          ユーザー
+    .group__edit
+      = link_to "#" , class: "edit-btn" do
+        Edit
+  
+  .message
+    .message__user
+      .message__user--name
+        ユーザー1
+      .message__user--time
+        2020/06/16(Tue) 14:20:04
+    .message__text
+      おはよう
+    .message__user
+      .message__user--name
+        ユーザー2
+      .message__user--time
+        2020/06/16(Tue) 14:20:04
+    .message__text
+      こんにちは
+    .message__user
+      .message__user--name
+        ユーザー3
+      .message__user--time
+        2020/06/16(Tue) 14:20:04
+    .message__text
+      こんばんは
+  .form
+    %form.form__new
+      .form-input
+        %input{placeholder: "type a message", type: "text", class: "form-input__message"}
+        %label{class: "form-input__image"}
+          =icon('fas','image')
+          %input{type: "file" , class: "form-input__image--file"}
+      %input{type: "submit", value: "Send", class: "submit-btn" }
