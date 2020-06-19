@@ -2,13 +2,13 @@
   .header
     .header__box
       .header__box__name
-        ユーザー
+        = current_user.name
       .header__box__icon
         .header__box__icon--new
           = link_to "#" , class: "header__box__icon--btn" do
             = icon('far', 'edit')
         .header__box__icon--cog
-          = link_to "#" ,class: "header__box__icon--btn" do
+          = link_to edit_user_path(current_user) ,class: "header__box__icon--btn" do
             =icon('fa', 'cog')
   .group
     .group__list
