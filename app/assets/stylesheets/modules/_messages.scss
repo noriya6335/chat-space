@@ -50,10 +50,14 @@ $lightblue: #38aef0;
   .group{
     background-color: #2f3e51;
     height: calc(100vh - 100px);
-
+   
     &__list{
-      color: $white;
       padding: 20px;
+      
+      &--list{
+      text-decoration: none;
+      color: $white;
+      }
 
       &__name{
         font-size: 15px;
