@@ -122,10 +122,13 @@ $lightblue: #38aef0;
   .message{
     height: calc(100vh - 190px);
     background-color: #fafafa;
-    padding:35px 0px  0px 40px;
+    padding:35px 40px;
+    overflow: scroll;
     &__user{
+      
       display: flex;
       margin-bottom:12px;
+
       &--name{
         font-size: 16px;
         color: #333333;
@@ -146,12 +149,14 @@ $lightblue: #38aef0;
   }
 }
 
+
   .form{
     height: 90px;
     background-color: #d2d2d2;
+
     &__new{
       display: flex;
-    
+      
       .form-input{
         display: flex;
         position: relative;

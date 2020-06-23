@@ -2,42 +2,25 @@
   .group
     .group__info
       .group__info__name
-        グループ
+        = @group.name
       %ul.group__info__member
         Member :
         .group__info__member--list
-          ユーザー
+        - @group.users.each do |user|
+          = user.name
     .group__edit
-      = link_to "#" , class: "edit-btn" do
+      = link_to edit_group_path(@group.id) , class: "edit-btn" do
         Edit
-  
+        
   .message
-    .message__user
-      .message__user--name
-        ユーザー1
-      .message__user--time
-        2020/06/16(Tue) 14:20:04
-    .message__text
-      おはよう
-    .message__user
-      .message__user--name
-        ユーザー2
-      .message__user--time
-        2020/06/16(Tue) 14:20:04
-    .message__text
-      こんにちは
-    .message__user
-      .message__user--name
-        ユーザー3
-      .message__user--time
-        2020/06/16(Tue) 14:20:04
-    .message__text
-      こんばんは
+    = render @messages
+
   .form
-    %form.form__new
-      .form-input
-        %input{placeholder: "type a message", type: "text", class: "form-input__message"}
-        %label{class: "form-input__image"}
-          =icon('fas','image')
-          %input{type: "file" , class: "form-input__image--file"}
-      %input{type: "submit", value: "Send", class: "submit-btn" }
+    = form_for [@group, @message] do |f|
+      .form__new
+        .form-input
+          = f.text_field :body, class: "form-input__message", placeholder: "type a message"
+          = f.label :image, class: "form-input__image" do
+            = icon('fas','image')
+            = f.file_field :image, class: "form-input__image--file"
+        = f.submit "Send", class: "submit-btn"
