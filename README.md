@@ -9,8 +9,8 @@
 
 ### Association
 - has_many :messages
-- has_many :groups_users
-- has_many :groups, through: :groups_users
+- has_many :group_users
+- has_many :groups, through: :group_users
 
 
 ## messagesテーブル
@@ -31,11 +31,11 @@
 |name|string|null :false|
 
 ### Association
-- has many :users through: :groups_users
+- has many :users through: :group_users
 - has many :group_users
 - has many :messages
 
-## groups_usersテーブル
+## group_usersテーブル
 |column|type|option|
 |------|----|------|
 |user_id|integer|null: false, foreign_key: true|
