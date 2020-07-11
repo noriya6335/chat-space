@@ -12,9 +12,9 @@ $(function(){
           </div>
         </div>
         <div class="messages__text">
-        <p>
+          <p>
             ${message.body}
-        </p>
+          </p>
         </div>
         <img src=${message.image}>
       </div>`
@@ -74,7 +74,7 @@ $(function(){
     .done(function(messages){
       if (messages.length !== 0){
 
-      
+
         var insertHTML = "";
         $.each(messages, function(i,message){
           insertHTML += buildHTML(message)
